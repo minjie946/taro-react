@@ -1,0 +1,7 @@
+
+test/*
+static/*.js
+config/*
+node_modules/*
+
+src/**/*.config.ts

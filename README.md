@@ -1,2 +1,5 @@
 # taro-react
-taro+react+ts+mobx
+
+Taro+React+TypeScript+Mobx
+
+Taro 小程序
