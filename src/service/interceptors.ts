@@ -14,19 +14,9 @@ export const HTTP_STATUS = {
 }
 
 /** 请求参数 */
-export interface RequestProps {
-  /** 请求地址 */
-  url: string
-  /** 请求参数 */
-  param?: any
+export interface RequestProps extends Taro.request.Option<any, any> {
   /** 域名的配置 */
   baseURL?: string
-  /** 请求的方式: 默认get */
-  method?: 'GET' | 'POST'
-  /** 请求头 */
-  header?: Taro.request.Option<any, any>
-  /** 请求中的额外配置 */
-  config?: any
 }
 
 /** 封装请求的拦截器 */

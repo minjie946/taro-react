@@ -9,17 +9,17 @@ interceptors.forEach(interceptorItem => Taro.addInterceptor(interceptorItem))
  * @return {Promise<any>}
  */
 export const request = (option: RequestProps) => {
-  const { url, baseURL, method = 'GET', param = {}, header = {}, config = {} } = option
+  const { url, baseURL, data, method = 'GET', header, ...otherConfig } = option
   return new Promise((resolve, reject) => {
     Taro.request({
       url: baseURL ? baseURL + url : url,
-      data: param,
+      data,
       method,
       header: {
         'Content-Type': 'application/json;charset=UTF-8',
         ...header
       },
-      ...config
+      ...otherConfig
     }).then((res) => {
       // 业务逻辑的处理
       resolve(res)
